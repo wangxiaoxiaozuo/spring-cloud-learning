@@ -1,13 +1,5 @@
 server:
   port: 9000
-zuul:
-  routes:
-    api-login:
-      path: /api-login/**
-      serviceId: login-service
-    api-blog:
-      path: /api-blog/**
-      serviceId: blog-service
 eureka:
   instance:
     hostname: localhost

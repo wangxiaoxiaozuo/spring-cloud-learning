@@ -14,6 +14,7 @@
         <module>spring-cloud-blog-service</module>
         <module>service-common</module>
         <module>spring-cloud-zuul-server</module>
+        <module>spring-cloud-config-server</module>
     </modules>
 
     <!--spring boot 父类项目-->
@@ -57,6 +58,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+        <!--config-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
     </dependencies>
 
