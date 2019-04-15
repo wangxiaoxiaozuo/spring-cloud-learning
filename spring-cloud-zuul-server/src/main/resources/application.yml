@@ -1,0 +1,17 @@
+zuul:
+  routes:
+    api-login:
+      path: /api-login/**
+      serviceId: login-service
+    api-blog:
+      path: /api-blog/**
+      serviceId: blog-service
+server:
+  port: 9004
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+spring:
+  application:
+    name: api-zuul
