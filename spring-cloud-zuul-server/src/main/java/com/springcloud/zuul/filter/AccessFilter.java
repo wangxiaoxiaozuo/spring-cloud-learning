@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * @Description: 路由网管过滤器
  */
 @Slf4j
-@Component
+//@Component
 public class AccessFilter extends ZuulFilter {
 
     @Override
@@ -40,12 +40,12 @@ public class AccessFilter extends ZuulFilter {
         HttpServletRequest request = cts.getRequest();
         String accessToken = request.getParameter("accessToken");
         log.info("网关拦截---------->>>>>>>>>>");
-        try {
-            log.info("正常放行");
-        } catch (Exception e) {
-            cts.set("error.status_code", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            cts.set("error.exception", e);
-        }
+//        try {
+//            log.info("正常放行");
+//        } catch (Exception e) {
+//            cts.set("error.status_code", HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+//            cts.set("error.exception", e);
+//        }
         return null;
     }
 }

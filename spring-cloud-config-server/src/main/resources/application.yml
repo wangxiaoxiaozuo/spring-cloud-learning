@@ -4,12 +4,13 @@ spring:
   cloud:
     config:
       server:
-        default-application-name: config-server
+#        default-application-name: config-server
         git:
-          uri: https://github.com/wangxiaoxiaozuo/spring-cloud-config/
+          uri: https://github.com/wangxiaoxiaozuo/spring-cloud-config.git
           username: wangxiaoxiaozuo
           password: wj@962464
-          search-paths: {application}/{application}-config
+          search-paths: /{application}
+          force-pull: true
       label: master
   application:
     name: config-server

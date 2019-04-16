@@ -3,11 +3,11 @@ package com.blog.service.service;
 import com.blog.service.service.fallback.BlogServiceFallBack;
 import com.service.common.dto.UserDTO;
 import com.service.common.response.BaseResponse;
-import feign.form.ContentType;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  * @Auther: wangjian
