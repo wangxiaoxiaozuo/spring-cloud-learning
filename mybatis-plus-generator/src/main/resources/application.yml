@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: abc123456
+#    url: jdbc:mysql://10.0.0.66:3306/db_user?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://10.0.0.66:3307/db_blog?characterEncoding=utf8&useSSL=false
+#代码生成器配置
+code.generator:
+#  packageName: com.login.center
+  packageName: com.blog.service
+  tableNames:
+#       - user_info #用户信息
+       - blog_info #用户信息
+
+  outputDir: D:\Wangjian_coding_tools\generator_code\blog-service
+  author: wangjian
+  jdbcUrl: ${spring.datasource.url}
+  jdbcUsername: ${spring.datasource.username}
+  jdbcPassword: ${spring.datasource.password}
+  jdbcDriverName: ${spring.datasource.driver-class-name}

@@ -1,7 +1,9 @@
 package com.blog.service.service.fallback;
 
 import com.blog.service.service.BlogService;
+import com.blog.service.service.UserInfoService;
 import com.service.common.dto.UserDTO;
+import com.service.common.dto.UserInfo;
 import com.service.common.response.BaseResponse;
 import com.service.common.response.ResponseSupport;
 import org.springframework.http.MediaType;
@@ -16,11 +18,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Component
 @RequestMapping("/fallback")
-public class BlogServiceFallBack implements BlogService {
+public class BlogServiceFallBack implements BlogService, UserInfoService {
 
 
     @Override
     public BaseResponse login(UserDTO userDTO) {
+        return ResponseSupport.fail("远程调用失败....");
+    }
+
+    @Override
+    public BaseResponse addUser(UserInfo userInfo) {
         return ResponseSupport.fail("远程调用失败....");
     }
 }

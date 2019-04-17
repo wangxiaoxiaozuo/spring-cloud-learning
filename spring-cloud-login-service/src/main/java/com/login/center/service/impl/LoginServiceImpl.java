@@ -19,7 +19,7 @@ public class LoginServiceImpl implements LoginService {
     public void login(UserDTO userDTO) {
         if (userDTO != null &&
                 userDTO.getUserName().equalsIgnoreCase("wangj") &&
-            userDTO.getPassWord().equals("123456")) {
+                userDTO.getPassWord().equals("123456")) {
             log.info("登陆成功");
         }
     }
