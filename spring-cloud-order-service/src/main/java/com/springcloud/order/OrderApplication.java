@@ -1,4 +1,4 @@
-package com.blog.service;
+package com.springcloud.order;
 
 import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
 import org.mybatis.spring.annotation.MapperScan;
@@ -11,19 +11,18 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @Auther: wangjian
- * @Date: 2019/4/9 11:01
- * @Description:
+ * @Date: 2019/4/18 14:38
+ * @Description: 订单服务
  */
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
-@EnableCircuitBreaker
+//@EnableCircuitBreaker
 @EnableDistributedTransaction
 @EnableTransactionManagement
-@MapperScan("com.blog.service.mapper")
-public class BlogApplication {
-
+@MapperScan("com.springcloud.order.mapper")
+public class OrderApplication {
     public static void main(String[] args) {
-        SpringApplication.run(BlogApplication.class, args);
+        SpringApplication.run(OrderApplication.class, args);
     }
 }

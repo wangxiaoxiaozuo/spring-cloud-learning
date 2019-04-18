@@ -9,41 +9,37 @@ import java.time.LocalDateTime;
 
 /**
  * <p>
- *
+ * 
  * </p>
  *
  * @author wangjian
- * @since 2019-04-17
+ * @since 2019-04-18
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class UserInfo implements Serializable {
+public class OrderInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public UserInfo() {
+    public OrderInfo(String orderName, String orderDes) {
+        this.orderName = orderName;
+        this.orderDes = orderDes;
+    }
+    public OrderInfo() {
     }
 
-    public UserInfo(String userName, String userPassword, String mobile) {
-        this.userName = userName;
-        this.userPassword = userPassword;
-        this.mobile = mobile;
-    }
+    private Integer id;
 
-    private Integer userId;
+    private String orderName;
 
-    private String userName;
-
-    private String userPassword;
-
-    private String mobile;
+    private String orderDes;
 
     private LocalDateTime createTime;
 
     private LocalDateTime updateTime;
 
-    private Integer userStatus;
+    private Integer state;
 
 
 }

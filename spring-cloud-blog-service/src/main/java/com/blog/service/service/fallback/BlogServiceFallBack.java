@@ -1,7 +1,11 @@
 package com.blog.service.service.fallback;
 
 import com.blog.service.service.BlogService;
+import com.blog.service.service.OrderInfoService;
 import com.blog.service.service.UserInfoService;
+import com.codingapi.txlcn.tc.support.DTXUserControls;
+import com.codingapi.txlcn.tracing.TracingContext;
+import com.service.common.dto.OrderInfo;
 import com.service.common.dto.UserDTO;
 import com.service.common.dto.UserInfo;
 import com.service.common.response.BaseResponse;
@@ -18,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Component
 @RequestMapping("/fallback")
-public class BlogServiceFallBack implements BlogService, UserInfoService {
+public class BlogServiceFallBack implements BlogService, UserInfoService{
 
 
     @Override
@@ -28,6 +32,9 @@ public class BlogServiceFallBack implements BlogService, UserInfoService {
 
     @Override
     public BaseResponse addUser(UserInfo userInfo) {
-        return ResponseSupport.fail("远程调用失败....");
+        DTXUserControls.rollbackGroup(TracingContext.tracing().groupId());
+        return ResponseSupport.fail("远程调用用户失败....");
     }
+
+
 }

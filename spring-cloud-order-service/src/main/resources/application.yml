@@ -1,18 +1,21 @@
 server:
-  port: 9001
+  port: 9006
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:9000/eureka/
 spring:
   application:
-    name: login-service
+    name: order-service
   datasource:
     url: jdbc:mysql://10.0.0.66:3306/db_user?characterEncoding=utf8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: abc123456
+feign:
+  hystrix:
+    enabled: true
 mybatis-plus:
   mapper-locations: classpath*:mapper/*Mapper.xml
   global-config:
@@ -25,6 +28,10 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
-#tx-lcn:
-#  client:
-#    manager-address: 127.0.0.1:9005
+tx-lcn:
+  client:
+    manager-address: 127.0.0.1:8070
+  ribbon:
+    loadbalancer:
+      dtx:
+        enabled: true

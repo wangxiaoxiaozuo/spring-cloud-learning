@@ -14,9 +14,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableTransactionManagement
-//@EnableDistributedTransaction(enableTxc=false)
+@EnableDistributedTransaction
 public class LoginApplication {
-
 
     public static void main(String[] args) {
         SpringApplication.run(LoginApplication.class, args);
