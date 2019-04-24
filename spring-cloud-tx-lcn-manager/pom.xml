@@ -10,9 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-cloud-tx-lcn-manager</artifactId>
-    <properties>
-        <codingapi.txlcn.version>5.0.2.RELEASE</codingapi.txlcn.version>
-    </properties>
+
 
     <dependencies>
         <dependency>

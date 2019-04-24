@@ -10,3 +10,11 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    #允许健康检查
+    healthcheck:
+      enabled: true
+spring:
+  security:
+    user:
+      name: user
+      password: abc123456
